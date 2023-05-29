@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
-
 const Header = () => {
+    const headlink = [
+        { title: "Home", path: "/" },
+        { title: "News", path: "/news" },
+        { title: "Category", path: "/category" },
+    ]
     return (
         <div>
             <header className="text-gray-600 body-font">
@@ -10,9 +14,14 @@ const Header = () => {
                         <span className="ml-3 text-xl">React Practice</span>
                     </a>
                     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                        <Link to="/" className="mr-5 hover:text-gray-900">Home</Link>
-                        <Link to="/news" className="mr-5 hover:text-gray-900">News</Link>
-                        <Link to="/category" className="mr-5 hover:text-gray-900">Category</Link>
+                        {headlink.map((e, index) => {
+                            return (
+                                <>
+                                    <Link key={index} to={e.path} className="mr-5 hover:text-gray-900">{e.title}</Link>
+                                </>
+                            )
+                        })}
+
 
                     </nav>
                     <button className="inline-flex items-center text-white bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-700 rounded text-base mt-4 md:mt-0">Go to Cart
