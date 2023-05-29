@@ -1,20 +1,7 @@
-import { useParams } from "react-router-dom";
-import Header from "../Component/Header";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-const data = {
-    "id": 1,
-    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-    "price": 109.95,
-    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    "category": "men's clothing",
-    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-    "rating": {
-        "rate": 3.9,
-        "count": 120
-    }
-}
-const SingleProduct = () => {
 
+const SingleProduct = () => {
     const { id } = useParams()
     console.log('id: ', id);
 
@@ -37,7 +24,17 @@ const SingleProduct = () => {
             })
     }, [])
     // !Object.keys(product).length > 0 && <div>No Product Found </div>
-    if (!Object.keys(product).length > 0) return <div>No Product Found </div>
+    if (!Object.keys(product).length > 0) return <div><section className="text-gray-600 body-font">
+        <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+            <div className="text-center lg:w-2/3 w-full">
+                <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Product Not Found</h1>
+                <div className="flex justify-center">
+                    <Link to={"/"} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Home page</Link>
+                </div>
+            </div>
+        </div>
+    </section> </div>
 
     return (
         <div>
