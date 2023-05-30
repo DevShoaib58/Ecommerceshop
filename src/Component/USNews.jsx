@@ -11,7 +11,6 @@ const USNews = () => {
             })
             .then(data => {
                 setData(data.articles)
-                console.log('data: ', data);
             })
     }
 
@@ -24,11 +23,11 @@ const USNews = () => {
                 <div className="container px-5 py-24 mx-auto">
                     <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">US News</h1>
                     <div className="flex flex-wrap -m-4">
-                        {data.map((e, index) => {
+                        {data.map((e) => {
                             return (
                                 <>
                                     <div className="p-4 md:w-1/3">
-                                        <div key={index} className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                                        <div key={e} className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                             <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={e.urlToImage !== null ? e.urlToImage : "https://via.placeholder.com/400"} alt="blog" />
                                             {/* <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={e.urlToImage} alt="blog" /> */}
                                             <div className="p-6">

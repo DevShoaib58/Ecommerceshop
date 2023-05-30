@@ -23,21 +23,21 @@ const BbcNews = () => {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <marquee width="100%" direction="left" height="100px">
-                        {data.map((obj, index) => {
+                        {data.map((obj) => {
                             return (
                                 <>
-                                    <p className="" key={index}>{obj.title}</p>
+                                    <p className="" key={obj}>{obj.title}</p>
                                 </>
                             )
                         })}
                     </marquee>
                     <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">BBC News</h1>
                     <div className="flex flex-wrap -m-4">
-                        {data.map((e, index) => {
+                        {data.map((e) => {
                             return (
                                 <>
                                     <div className="p-4 md:w-1/3">
-                                        <div key={index} className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                                        <div key={e} className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                             <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={e.urlToImage !== null ? e.urlToImage : "https://via.placeholder.com/400"} alt="blog" />
                                             <div className="p-6">
                                                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{e.source.name}</h2>
