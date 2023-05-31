@@ -4,6 +4,7 @@ import Stat from "../Component/Feature/Stat";
 // import UserProfile from "../Component/Feature/UserProfile";
 import Hero from "../Component/Hero";
 import Products from "../Component/Products";
+import Category from "./Category";
 
 const HomePage = () => {
     const [products, setProducts] = useState([])
@@ -36,6 +37,7 @@ const HomePage = () => {
             </div>}
             {/* <Products /> */}
             <FeatureCard />
+            <Category />
             <Stat />
             {/* <UserProfile /> */}
 
