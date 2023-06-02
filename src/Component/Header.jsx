@@ -5,6 +5,7 @@ const Header = () => {
         { title: "News", path: "/news" },
         { title: "Category", path: "/category" },
         { title: "All News", path: "/allnews" },
+        { title: "User Profile", path: "/userprofile" },
     ]
     return (
         <div>

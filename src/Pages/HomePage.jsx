@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import FeatureCard from "../Component/Feature/FeatureCard";
 import Stat from "../Component/Feature/Stat";
-// import UserProfile from "../Component/Feature/UserProfile";
 import Hero from "../Component/Hero";
 import Products from "../Component/Products";
 import Category from "./Category";
@@ -35,12 +34,9 @@ const HomePage = () => {
                     <span className="sr-only">Loading...</span>
                 </div>
             </div>}
-            {/* <Products /> */}
             <FeatureCard />
             <Category />
             <Stat />
-            {/* <UserProfile /> */}
-
         </div>
     );
 };
