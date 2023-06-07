@@ -19,7 +19,7 @@ const UserProfile = () => {
     }, [])
     return (
         <div>
-            <section style={{ background: block.gender == "male" ? 'blue' : 'pink' }} className="text-gray-600 body-font">
+            <section style={{ background: block.gender == "male" ? 'blue' : 'pink', width: "500px" }} className="mx-auto text-gray-600 body-font m-4">
                 <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                     <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src={block.picture.large} />
                     <div className="text-center lg:w-2/3 w-full">
@@ -27,7 +27,7 @@ const UserProfile = () => {
                         <p className="mb-4 leading-relaxed text-white">Title : {block.name.title}</p>
                         <p className="mb-4 leading-relaxed text-white"> {block.cell}</p>
                         <div className="flex justify-center">
-                            <button onClick={() => { fetchUserData() }} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+                            <button onClick={() => { fetchUserData() }} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Refresh</button>
 
                         </div>
                     </div>

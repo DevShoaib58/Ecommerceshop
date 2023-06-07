@@ -11,6 +11,7 @@ import Footer from './Component/Footer/Footer'
 import AllNews from './Pages/AllNews'
 import Page404 from './Pages/Page404'
 import UserProfile from './Component/Feature/UserProfile'
+import Quote from './Pages/Quote'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/allnews" element={<AllNews />} />
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/userprofile" element={<UserProfile />} />
+          <Route path="/quote" element={<Quote />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />
