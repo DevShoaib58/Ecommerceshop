@@ -11,7 +11,6 @@ const Quote = () => {
             .then(data => {
                 setQuote(data)
                 console.log(data);
-                console.log(data.slip);
             })
     }
     useEffect(() => {

@@ -16,7 +16,7 @@ const Category = () => {
         fetchData()
             .then((res) => {
                 setCat(res)
-                console.log('res: ', res);
+                // console.log('res: ', res);
             })
             .catch((e) => {
                 console.log(e.message)

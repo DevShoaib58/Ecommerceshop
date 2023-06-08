@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const SingleProduct = () => {
     const { id } = useParams()
-    console.log('id: ', id);
+    // console.log('id: ', id);
 
     const [product, setProduct] = useState({})
     const fetchData = async () => {
