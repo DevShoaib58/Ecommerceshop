@@ -1,7 +1,30 @@
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Gallery = () => {
+    const [data, setData] = useState([])
+    const [img, setImg] = useState([])
+    const fatchdata = async () => {
+        fatchdata(`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
+            // fatchdata("https://api.unsplash.com/photos/?client_id=eJrGowlILBc7vmgyiBxiazUp8aXES8G-pA3yuxGQpis")
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                setData(data)
+                console.log('data: ', data);
+            }
+            )
+    }
+    useEffect(() => {
+        fatchdata();
+    }, [])
+
+
+
     return (
         <>
+
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto ">
                     <div className="w-full">
@@ -10,7 +33,7 @@ const Gallery = () => {
                     <div className="flex w-full justify-center items-end mb-10">
                         <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
                             <label for="hero-field" className="leading-7 text-sm text-gray-600">Placeholder</label>
-                            <input type="text" id="hero-field" name="hero-field" className="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <input type="text" value={img} onChange={(e) => setImg(e.target.value)} name="hero-field" className="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
                         <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
                     </div>
