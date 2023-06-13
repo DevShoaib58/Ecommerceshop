@@ -17,11 +17,9 @@ const Header = () => {
                         <span className="ml-3 text-xl">Ecommerce</span>
                     </Link>
                     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                        {headlink.map((e) => {
+                        {headlink.map((obj) => {
                             return (
-                                <>
-                                    <Link key="{e}" to={e.path} className="mr-5 hover:text-gray-900">{e.title}</Link>
-                                </>
+                                <Link key={obj} to={obj.path} className="mr-5 hover:text-gray-900">{obj.title}</Link>
                             )
                         })}
 

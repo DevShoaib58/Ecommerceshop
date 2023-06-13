@@ -22,6 +22,7 @@ const Gallery = () => {
         fetchAPI();
         setImg("car");
     }
+
     return (
         <>
             <section className="text-gray-600 body-font">
@@ -40,8 +41,9 @@ const Gallery = () => {
                         <div className="flex flex-wrap w-100">
                             {res.map((obj) => {
                                 return (
-                                    <div key={obj.id} className="md:p-2 p-1 w-1/2">
-                                        <img className="w-full object-cover h-full object-center block" src={obj.urls.small} alt="obj.alt_description" />
+                                    <div key={obj.id} className="md:p-2 p-1 w-1/2 mt-20">
+                                        <img className="mb-10 w-full object-cover h-full object-center block" src={obj.urls.small} alt="obj.alt_description" />
+                                        <button type="button" className="absolute px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download</button>
                                         {/* <img className="w-full object-cover h-full object-center block" src="https://placehold.co/600x400" alt="val.alt_description" /> */}
                                     </div>
                                 )
