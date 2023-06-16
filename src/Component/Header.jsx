@@ -7,7 +7,9 @@ const Header = () => {
         { title: "All News", path: "/allnews" },
         { title: "User Profile", path: "/userprofile" },
         { title: "Quote", path: "/quote" },
-        { title: "Gallery", path: "/gallery" }
+        { title: "Gallery", path: "/gallery" },
+        { title: "Login", path: "/login" },
+        { title: "Dashboard", path: "/dashboard" },
     ]
     return (
         <>
@@ -17,9 +19,9 @@ const Header = () => {
                         <span className="ml-3 text-xl">Ecommerce</span>
                     </Link>
                     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                        {headlink.map((obj) => {
+                        {headlink.map((obj, id) => {
                             return (
-                                <Link key={obj} to={obj.path} className="mr-5 hover:text-gray-900">{obj.title}</Link>
+                                <Link key={id} to={obj.path} className="mr-5 hover:text-gray-900">{obj.title}</Link>
                             )
                         })}
 

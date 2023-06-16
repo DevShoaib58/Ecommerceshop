@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Gallery = () => {
-    const [img, setImg] = useState("car")
+    const [img, setImg] = useState("")
     const [res, setRes] = useState([])
 
     const fetchAPI = () => {
@@ -11,17 +11,19 @@ const Gallery = () => {
             })
             .then(data => {
                 setRes(data.results)
-                console.log('res: ', res);
+                // console.log('res: ', res);
             })
 
     }
     useEffect(() => {
         fetchAPI();
+        setImg("car");
     }, [])
     const Submit = () => {
         fetchAPI();
-        setImg("car");
+        setImg("");
     }
+
 
     return (
         <>
@@ -35,13 +37,13 @@ const Gallery = () => {
                             <label className="leading-7 text-sm text-gray-600">Search Here</label>
                             <input value={img} onChange={(e) => setImg(e.target.value)} type="text" name="hero-field" className="w-full bg-gray-100 bg-opacity-50 rounded focus:ring-2 focus:ring-indigo-200 focus:bg-transparent border border-gray-300 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                         </div>
-                        <button onClick={Submit} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+                        <button type="submit" onClick={Submit} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
                     </div>
                     <div className="flex flex-wrap md:-m-2 -m-1">
                         <div className="flex flex-wrap w-100">
-                            {res.map((obj) => {
+                            {res.map((obj, id) => {
                                 return (
-                                    <div key={obj.id} className="md:p-2 p-1 w-1/2 mt-20">
+                                    <div key={id} className="md:p-2 p-1 w-1/2 mt-20">
                                         <img className="mb-10 w-full object-cover h-full object-center block" src={obj.urls.small} alt="obj.alt_description" />
                                         <button type="button" className="absolute px-3 py-2 text-xs font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Download</button>
                                         {/* <img className="w-full object-cover h-full object-center block" src="https://placehold.co/600x400" alt="val.alt_description" /> */}
