@@ -28,7 +28,7 @@ const USNews = () => {
                                 <>
                                     <div className="p-4 md:w-1/3">
                                         <div key={e} className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                                            <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={e.urlToImage !== null ? e.urlToImage : "https://via.placeholder.com/400"} alt="blog" />
+                                            <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={e.urlToImage !== null ? e.urlToImage : "https://placehold.co/600x400"} alt="blog" />
                                             {/* <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={e.urlToImage} alt="blog" /> */}
                                             <div className="p-6">
                                                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{e.source.name}</h2>
