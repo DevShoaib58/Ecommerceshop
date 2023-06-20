@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const HomeNews = () => {
     const [data, setData] = useState([])
-    const fetchUserData = () => {
+    const fetchUserData = async () => {
         // fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
-        fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
+        await fetch("https://newsapi.org/v2/everything?q=bitcoin&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
             .then(response => {
                 return response.json()
             })

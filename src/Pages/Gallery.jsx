@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Gallery = () => {
-    const [img, setImg] = useState("")
+    const [img, setImg] = useState("car")
     const [res, setRes] = useState([])
 
     const fetchAPI = () => {
@@ -17,11 +17,10 @@ const Gallery = () => {
     }
     useEffect(() => {
         fetchAPI();
-        setImg("car");
+        // setImg("");
     }, [])
     const Submit = () => {
         fetchAPI();
-        setImg("");
     }
 
 

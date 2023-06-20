@@ -13,7 +13,7 @@ import Page404 from './Pages/Page404'
 import UserProfile from './Component/Feature/UserProfile'
 import Quote from './Pages/Quote'
 import Gallery from './Pages/Gallery'
-import Todo from './Pages/Todo'
+import Post from './Pages/Post'
 
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
           <Route path="/userprofile" element={<UserProfile />} />
           <Route path="/quote" element={<Quote />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/todo" element={<Todo />} />
+          <Route path="/post" element={<Post />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />
