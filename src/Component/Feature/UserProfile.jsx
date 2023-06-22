@@ -9,7 +9,7 @@ const UserProfile = () => {
                 return response.json()
             })
             .then(res => {
-                console.log('data.results: ', res.results);
+                // console.log('data.results: ', res.results);
                 setBlock(res.results[0])
             })
     }
