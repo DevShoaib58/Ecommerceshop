@@ -10,7 +10,7 @@ const Quote = () => {
             })
             .then(data => {
                 setQuote(data.slip)
-                console.log('data: ', data);
+                // console.log('data: ', data);
             })
     }
     const { id, advice } = quote;
