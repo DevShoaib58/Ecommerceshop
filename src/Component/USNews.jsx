@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 const USNews = () => {
     const [data, setData] = useState([])
+    const Key = import.meta.env.VITE_API_URL_NEWS_API_KEY;
     const fetchUserData = () => {
         // fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
-        fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
+        fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${Key}`)
             .then(response => {
                 return response.json()
             })

@@ -1,11 +1,13 @@
 import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const BbcNews = () => {
+    const Key = import.meta.env.VITE_API_URL_NEWS_API_KEY;
     const [data, setData] = useState([])
     const fetchUserData = () => {
         // fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
-        fetch("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
+        fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${Key}`)
             .then(response => {
                 return response.json()
             })

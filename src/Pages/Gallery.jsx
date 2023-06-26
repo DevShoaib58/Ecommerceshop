@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const Gallery = () => {
     const [img, setImg] = useState("car")
     const [res, setRes] = useState([])
-
+    const Key = import.meta.env.VITE_API_URL_UNSPLASH_API_KEY;
     const fetchAPI = () => {
-        fetch(`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=eJrGowlILBc7vmgyiBxiazUp8aXES8G-pA3yuxGQpis`)
+        fetch(`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Key}`)
             .then(response => {
                 return response.json()
             })
