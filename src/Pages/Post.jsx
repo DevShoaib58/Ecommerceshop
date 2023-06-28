@@ -11,9 +11,9 @@ const Post = () => {
             // this will Add Dynamic Id every time You change the value
             .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
             .then(res => {
-                console.log("data", res);
+                // console.log("data", res);
                 setPost(res.data)
-                console.log('res.data: ', res.data);
+                // console.log('res.data: ', res.data);
             })
         // [id] is a dependance array which will render the commpnent onChange of the value in search Field
     }, [id])
