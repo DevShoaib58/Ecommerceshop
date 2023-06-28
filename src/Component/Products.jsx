@@ -1,4 +1,5 @@
 
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 const Products = (products) => {
@@ -13,19 +14,18 @@ const Products = (products) => {
                     <div className="flex flex-wrap -m-4">
                         {products.products.map((e) => {
                             return (
-                                <>
-                                    <Link to={`/product/${e.id}`} key={e} className="lg:w-1/4 md:w-1/2 p-4 w-full">
-
-                                        <a className="block relative h-48 rounded overflow-hidden">
+                                <Fragment key={e.id}>
+                                    <Link to={`/product/${e.id}`} className="lg:w-1/4 md:w-1/2 p-4 w-full">
+                                        <div className="block relative h-48 rounded overflow-hidden">
                                             <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={e.image} />
-                                        </a>
+                                        </div>
                                         <div className="mt-4">
                                             <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">{e.category}</h3>
                                             <h2 className="text-gray-900 title-font text-lg font-medium">{e.title}</h2>
                                             <p className="mt-1">${e.price}</p>
                                         </div>
                                     </Link>
-                                </>
+                                </Fragment>
                             )
                         })}
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -33,8 +33,8 @@ const Category = () => {
                     <div className="flex flex-wrap -m-4">
                         {cat.map((obj) => {
                             return (
-                                <>
-                                    <div key={obj} className="p-4 md:w-1/3">
+                                <Fragment key={obj}>
+                                    <div className="p-4 md:w-1/3">
                                         <div className="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
                                             <div className="flex items-center mb-3">
                                                 <div className="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
@@ -54,7 +54,7 @@ const Category = () => {
                                         </div>
                                     </div>
 
-                                </>
+                                </Fragment>
                             )
                         })}
                     </div >

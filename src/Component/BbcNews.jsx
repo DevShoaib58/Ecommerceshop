@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const BbcNews = () => {
+    const Key = import.meta.env.VITE_API_URL_NEWS_API_KEY;
     const [data, setData] = useState([])
     const fetchUserData = () => {
         // fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
-        fetch("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=abf1d39c4cd5409c944176ef0b5c62da")
+        fetch(`https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=${Key}`)
             .then(response => {
                 return response.json()
             })
@@ -23,19 +25,21 @@ const BbcNews = () => {
             <section className="text-gray-600 body-font">
                 <div className="container px-5 py-24 mx-auto">
                     <marquee width="100%" direction="left" height="100px">
-                        {data.map((obj) => {
+                        {data.map((obj, index) => {
                             return (
-                                <p className="" key={obj.id}>{obj.title}</p>
+                                <Fragment key={index}>
+                                    <p >{obj.title}</p>
+                                </Fragment>
                             )
                         })}
                     </marquee>
                     <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">BBC News</h1>
                     <div className="flex flex-wrap -m-4">
-                        {data.map((e) => {
+                        {data.map((e, index) => {
                             return (
-                                <>
+                                <Fragment key={index}>
                                     <div className="p-4 md:w-1/3">
-                                        <div key={e.id} className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                                        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                                             <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={e.urlToImage !== null ? e.urlToImage : "https://via.placeholder.com/400"} alt="blog" />
                                             <div className="p-6">
                                                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{e.source.name}</h2>
@@ -58,7 +62,7 @@ const BbcNews = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </>)
+                                </Fragment>)
                         })}
 
                     </div>
