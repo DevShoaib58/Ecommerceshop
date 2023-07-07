@@ -5,14 +5,14 @@ const Gallery = () => {
     const [img, setImg] = useState("car")
     const [res, setRes] = useState([])
     const Key = import.meta.env.VITE_API_URL_UNSPLASH_API_KEY;
-    const fetchAPI = () => {
-        fetch(`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Key}`)
+    const fetchAPI = async () => {
+        await fetch(`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Key}`)
             .then(response => {
                 return response.json()
             })
             .then(data => {
                 setRes(data.results)
-                // console.log('res: ', res);
+                console.log('res: ', res);
             })
 
     }
@@ -40,7 +40,7 @@ const Gallery = () => {
                         </div>
                         <button type="submit" onClick={Submit} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Search</button>
                     </div>
-                    {res == 0 ? <Page404 title="Seach Agein With Correct Word" /> :
+                    {res === 0 ? <Page404 title="Seach Agein With Correct Word" /> :
                         <div className="flex flex-wrap md:-m-2 -m-1">
                             <div className="flex flex-wrap w-100">
                                 {res.map((obj, id) => {
