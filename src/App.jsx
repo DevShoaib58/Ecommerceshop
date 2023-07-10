@@ -14,6 +14,7 @@ import UserProfile from './Component/Feature/UserProfile'
 import Quote from './Pages/Quote'
 import Gallery from './Pages/Gallery'
 import Post from './Pages/Post'
+import Todo from './Pages/Todo'
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/quote" element={<Quote />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/post" element={<Post />} />
+          <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
         <Footer />

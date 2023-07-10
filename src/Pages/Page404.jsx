@@ -7,8 +7,8 @@ const Page404 = (props) => {
                 <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                     <img className="lg:w-3/6 md:w-4/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://assets.hongkiat.com/uploads/funny-creative-error-404/14-error-404-page.jpg" />
                     <div className="text-center lg:w-2/3 w-full">
-                        {/* {props.title === undefined || props.title === null ? */}
-                        {!props.title ?
+                        {props.title === undefined || props.title == null ?
+                            // {!props.title ?
                             < h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Page 404 Not Found </h1> :
                             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> {props.title}</h1>
                         }

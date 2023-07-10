@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
+
+export const headlink = [
+    { title: "Home", path: "/" },
+    { title: "News", path: "/news" },
+    { title: "Category", path: "/category" },
+    { title: "All News", path: "/allnews" },
+    { title: "User Profile", path: "/userprofile" },
+    { title: "Quote", path: "/quote" },
+    { title: "Gallery", path: "/gallery" },
+    { title: "Post", path: "/post" },
+    { title: "Todo", path: "/todo" },
+]
+
 const Header = () => {
-    const headlink = [
-        { title: "Home", path: "/" },
-        { title: "News", path: "/news" },
-        { title: "Category", path: "/category" },
-        { title: "All News", path: "/allnews" },
-        { title: "User Profile", path: "/userprofile" },
-        { title: "Quote", path: "/quote" },
-        { title: "Gallery", path: "/gallery" },
-        { title: "Post", path: "/post" },
-    ]
+
     return (
         <>
             <header className="text-gray-600 body-font">
@@ -23,8 +27,6 @@ const Header = () => {
                                 <Link key={id} to={obj.path} className="mr-5 hover:text-gray-900">{obj.title}</Link>
                             )
                         })}
-
-
                     </nav>
                     <button className="inline-flex items-center text-white bg-indigo-500 border-0 py-1 px-3 focus:outline-none hover:bg-indigo-700 rounded text-base mt-4 md:mt-0">Go to Cart
 

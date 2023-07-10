@@ -40,7 +40,7 @@ const Gallery = () => {
                         </div>
                         <button type="submit" onClick={Submit} className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Search</button>
                     </div>
-                    {res === 0 ? <Page404 title="Seach Agein With Correct Word" /> :
+                    {res.length === 0 ? <Page404 title="Seach Again With Correct Word" /> :
                         <div className="flex flex-wrap md:-m-2 -m-1">
                             <div className="flex flex-wrap w-100">
                                 {res.map((obj, id) => {
